@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>Dashboard</strong>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <!-- <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <!-- <ion-card no-margin margin-bottom class="full-width">
+    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
+      <ion-icon name="search" color="primary" item-left></ion-icon>
+      <span>fff</span>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
+      <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
+    <ion-icon name="search"></ion-icon> Search
+  </button> -->
+
+  <ion-grid style="padding: 15px">
+    <ion-row class="my-product-moduled">
+      <div class="contect-sec">
+        <ion-col col-8 (click)="goToAccountDetails(account)" class="listing-sec">
+          <h2>Garbage Area Location 1</h2>
+          <p>Complaint No.: <span>123456789</span> </p>
+          <p>Status: <strong><span
+                [ngClass]="'active' == 'active' ? 'greenText':''">Done</span></strong>
+          </p>
+        </ion-col>
+  
+        <ion-col col-4 class="text-right">
+          <ion-fab style="right: 0px" #fab>
+            <ion-icon class="fab-icon" ion-fab name="more" (click)='ionFabClicked(fab)'></ion-icon>
+            <ion-fab-list style="padding-bottom: 20px;" side="bottom">
+ 
+              <button ion-item fab fab-left fab-fixed (click)="fab.close(); deletePost()">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Delete Post
+              </button>
+              <button ion-item fab fab-left fab-fixed (click)="fab.close();">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Locate On Map
+              </button>
+  
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <ion-row class="my-product-moduled">
+      <div class="contect-sec">
+        <ion-col col-8 (click)="goToAccountDetails(account)" class="listing-sec">
+          <h2>Garbage Area Location 2</h2>
+          <p>Complaint No.: <span>3453453543</span> </p>
+          <p>Status: <strong><span style="color:goldenrod">In Progress</span></strong>
+          </p>
+        </ion-col>
+  
+        <ion-col col-4 class="text-right">
+          <ion-fab style="right: 0px" #fab>
+            <ion-icon class="fab-icon" ion-fab name="more" (click)='ionFabClicked(fab)'></ion-icon>
+            <ion-fab-list style="padding-bottom: 20px;" side="bottom">
+ 
+              <button ion-item fab fab-left fab-fixed (click)="fab.close(); deletePost()">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Delete Post
+              </button>
+              <button ion-item fab fab-left fab-fixed (click)="fab.close();">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Locate On Map
+              </button>
+  
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <ion-row class="my-product-moduled">
+      <div class="contect-sec">
+        <ion-col col-8 (click)="goToAccountDetails(account)" class="listing-sec">
+          <h2>Garbage Area Location 3</h2>
+          <p>Complaint No.: <span>8364843648</span> </p>
+          <p>Status: <strong><span style="color:red">Not Done</span></strong>
+          </p>
+        </ion-col>
+  
+        <ion-col col-4 class="text-right">
+          <ion-fab style="right: 0px" #fab>
+            <ion-icon class="fab-icon" ion-fab name="more" (click)='ionFabClicked(fab)'></ion-icon>
+            <ion-fab-list style="padding-bottom: 20px;" side="bottom">
+ 
+              <button ion-item fab fab-left fab-fixed (click)="fab.close(); deletePost()">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Delete Post
+              </button>
+              <button ion-item fab fab-left fab-fixed (click)="fab.close();">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Locate On Map
+              </button>
+  
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <ion-row class="my-product-moduled">
+      <div class="contect-sec">
+        <ion-col col-8 (click)="goToAccountDetails(account)" class="listing-sec">
+          <h2>Garbage Area Location 4</h2>
+          <p>Complaint No.: <span>0364584364</span> </p>
+          <p>Status: <strong><span style="color:gray">No Action</span></strong>
+          </p>
+        </ion-col>
+  
+        <ion-col col-4 class="text-right">
+          <ion-fab style="right: 0px" #fab>
+            <ion-icon class="fab-icon" ion-fab name="more" (click)='ionFabClicked(fab)'></ion-icon>
+            <ion-fab-list style="padding-bottom: 20px;" side="bottom">
+ 
+              <button ion-item fab fab-left fab-fixed (click)="fab.close(); deletePost()">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Delete Post
+              </button>
+              <button ion-item fab fab-left fab-fixed (click)="fab.close();">
+                <!--  <img alt="partial-withdraw" src="assets/imgs/partial-withdraw.svg" /> --> Locate On Map
+              </button>
+  
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+      </div>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
